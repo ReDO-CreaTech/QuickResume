@@ -5,12 +5,28 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
 header {
     text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
 }
-
+nav {
+    display: flex;
+    gap: 20px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
 button {
     padding: 10px 20px;
     background-color: #007bff;
