@@ -43,3 +43,13 @@ function typeEffect() {
 }
 
 window.onload = typeEffect;
+
+//onclick Hover builder tools
+
+const dropdownToggle = document.getElementById('dropdown-toggle');
+const dropdownMenu = document.getElementById('dropdown-menu');
+
+dropdownToggle.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+});
