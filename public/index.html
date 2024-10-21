@@ -8,24 +8,40 @@
 </head>
 <body>
     <header>
-        <h1><a href="#">QuickResume</a></h1>
-        <!----<button onclick="location.href='/register'">Get Started</button>--->
-    <nav>
-        <a href="#">Templates</a>
-        <div class="dropdown">
-            <a href="#">Builder Tools</a>
-            <div class="dropdown-content">
-                <a href="#">Resume Builder</a>
-                <a href="#">Cover Letter Builder</a>
-                <a href="#">Portfolio Builder</a>
-            </div>    
-        </div>
-        <a href="#">Pricing</a>
-        <a href="#">About</a>
-        <a href="#">Sign In</a>
-    </nav>
+        <h1><a href="#">Quick<strong>Resume</strong></a></h1>
+        <nav>
+            <a href="#">Templates</a>
+            <div class="dropdown">
+                <a href="#">Builder Tools</a>
+                <div class="dropdown-content">
+                    <a href="resumebuilder.html">Resume Builder</a>
+                    <a href="#">Cover Letter Builder</a>
+                    <a href="#">Portfolio Builder</a>
+                </div>
+            </div>
+            <a href="#">Pricing</a>
+            <a href="#">About</a>
+            <a href="#">Sign In</a>
+            <button onclick="location.href='/register'">Get Started</button>
+        </nav>
     </header>
-    <!-----Main Content-->
+
+    <main>
+        <section class="hero">
+            <h2>Create a Winning Resume in Minutes</h2>
+            <p>Stand out with professional templates and easy-to-use builder tools.</p>
+            <button onclick="location.href='/templates'">Create Your Resume</button>
+        </section>
+
+        <section class="features">
+            <h3>Why Choose QuickResume?</h3>
+            <ul>
+                <li>📄 Wide range of customizable templates</li>
+                <li>⚙️ Intuitive drag-and-drop builder tools</li>
+                <li>📝 Instant export to PDF or Word formats</li>
+            </ul>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-links">
@@ -39,6 +55,7 @@
             <a href="#">Contact Information</a>
             <a href="#">Account Settings</a>
         </div>
+        <p>&copy; 2024 QuickResume. All rights reserved.</p>
     </footer>
 </body>
 </html>
