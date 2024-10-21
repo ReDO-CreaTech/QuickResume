@@ -12,3 +12,18 @@ function updatePreview() {
     document.getElementById('previewJob').innerText = document.getElementById('jobInput').value || 'Software Developer';
     document.getElementById('previewCompany').innerText = document.getElementById('companyInput').value || 'ABC Corp';
 }
+
+//DynamicText Effect
+
+const dynamicText = document.getElementById('dynamic-text');
+const phrases = ['Resume', 'Cover Letter', 'Portfolio'];
+let currentPhraseIndex = 0;
+let currentCharIndex = 0;
+let isDeleting = false;
+
+function typeEffect(){
+    const currentPhrase = phrases[currentPhraseIndex];
+    const displayText = currentPhrase.slice(0, currentCharIndex);
+
+
+}
