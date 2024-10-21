@@ -53,3 +53,9 @@ dropdownToggle.addEventListener('click', function(event) {
     event.preventDefault(); // Prevent default anchor behavior
     dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
 });
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = 'none'; // Hide dropdown
+    }
+});
