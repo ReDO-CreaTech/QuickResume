@@ -21,20 +21,19 @@ let currentPhraseIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
 
-function typeEffect(){
+function typeEffect() {
     const currentPhrase = phrases[currentPhraseIndex];
     const displayText = currentPhrase.slice(0, currentCharIndex);
-
     dynamicText.textContent = displayText;
 
     if (!isDeleting && currentCharIndex < currentPhrase.length) {
         currentCharIndex++;
         setTimeout(typeEffect, 150);
-    } else if (!isDeleting && currentCharIndex > 0){
+    } else if (isDeleting && currentCharIndex > 0) {
         currentCharIndex--;
         setTimeout(typeEffect, 100);
     } else {
-        isDeleting = isDeleting;
+        isDeleting = !isDeleting;
 
         if (!isDeleting) {
             currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
@@ -42,5 +41,5 @@ function typeEffect(){
         setTimeout(typeEffect, 800);
     }
 }
-//Start the typing on page load
+
 window.onload = typeEffect;
