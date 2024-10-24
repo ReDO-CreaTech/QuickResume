@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Clean, modern font */
+    line-height: 1.6;
+}
+
+body {
+    background-color: #f7f9fc; /* Light background for better contrast */
+    padding: 40px;
+}
+
+.cv-container {
+    max-width: 900px; /* Constrain width for better readability */
+    margin: 0 auto;
+    background-color: #ffffff; /* White background for the CV */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    display: grid;
+    grid-template-columns: 300px auto;
+    gap: 20px;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    border-right: 2px solid #e0e0e0; /* Subtle border for separation */
+    padding-right: 20px;
+}
+
+.photo img {
+    width: 150px; /* Consistent image size */
+    height: 150px;
+    border-radius: 50%; /* Circular photo */
+    object-fit: cover;
+    border: 4px solid #4a90e2; /* Slightly thicker border for emphasis */
+}
+
+.personal-info h1 {
+    font-size: 34px; /* Larger title for prominence */
+    font-weight: 700; /* Bolder font weight for visibility */
+    color: #333333; /* Darker text for readability */
+}
+
+.personal-info p {
+    font-size: 15px; /* Slightly larger text */
+    color: #777777; /* Subtle color for less emphasis */
+}
+
+/* Main Content Styling */
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 26px; /* Larger section titles */
+    margin-bottom: 10px;
+    color: #4a90e2; /* Brand color for section titles */
+    border-bottom: 2px solid #4a90e2; /* Keep consistent border color */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+p, ul {
+    font-size: 16px; /* Standard paragraph text */
+    color: #555555; /* Medium color for text */
+    margin-bottom: 10px;
+}
+
+/* Job Experience Styling */
+.work-experience .job {
+    margin-bottom: 15px;
+}
+
+.job h3 {
+    font-size: 22px; /* Slightly larger job titles */
+    color: #4a90e2; /* Job titles in brand color */
+    margin-bottom: 5px;
+}
+
+.job p {
+    font-size: 14px; /* Standard text size for job description */
+    color: #888888; /* Subtle color for less emphasis */
+}
+
+.job ul {
+    margin-left: 20px; /* Indentation for lists */
+    list-style: none; /* Remove default list styling */
+}
+
+.job ul li::before {
+    content: "•"; /* Custom bullet point */
+    color: #4a90e2; /* Use brand color for bullet */
+    margin-right: 8px;
+}
+
+/* Skills Section Styling */
+.skills ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsive grid */
+    gap: 10px;
+    list-style: none; /* No default list styling */
+}
+
+.skills ul li {
+    background-color: #e9f0fc; /* Light background for skills */
+    padding: 10px 15px; /* Slightly increased padding */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center;
+    color: #4a90e2; /* Skills text in brand color */
+    transition: background-color 0.3s; /* Smooth transition effect */
+}
+
+.skills ul li:hover {
+    background-color: #d4e4fb; /* Darker background on hover */
+}
+
+/* Reference Section */
+.references p {
+    font-size: 16px; /* Standard text size for references */
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cv-container {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        text-align: center;
+        border-right: none; /* Remove right border on small screens */
+    }
+
+    header {
+        border-right: none; /* Remove border */
+        padding-right: 0; /* Remove right padding */
+    }
+}

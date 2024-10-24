@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable CV</title>
+    <link rel="stylesheet" href="template1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .cv-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .photo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+        h1, h2 {
+            margin: 10px 0;
+        }
+        .toolbar {
+            margin-bottom: 10px;
+        }
+        .toolbar button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="toolbar">
+            <button onclick="document.execCommand('bold')">Bold</button>
+            <button onclick="document.execCommand('italic')">Italic</button>
+            <button onclick="document.execCommand('underline')">Underline</button>
+            <button onclick="document.execCommand('insertUnorderedList')">Bulleted List</button>
+            <button onclick="document.execCommand('insertOrderedList')">Numbered List</button>
+            <input type="color" id="text-color" onchange="changeTextColor()" value="#000000">
+        </div>
+        
+        <header>
+            <div class="photo">
+                <img src="your-photo.jpg" alt="Your Photo" id="photo-preview">
+                <input type="file" id="photo-upload" accept="image/*" style="display: block; margin-top: 10px;">
+            </div>
+            <div class="personal-info">
+                <h1 id="name" contenteditable="true">John Geneses Herrera</h1>
+                <p id="job-title" contenteditable="true">Restaurant Supervisor | Graphic Designer</p>
+                <p id="email" contenteditable="true">Email: john@example.com | Phone: +971-XXX-XXXXXX</p>
+                <p id="location" contenteditable="true">Location: Dubai, United Arab Emirates</p>
+            </div>
+        </header>
+
+        <hr>
+
+        <section class="summary">
+            <h2>Job Description</h2>
+            <p id="summary" contenteditable="true">
+                Experienced restaurant supervisor and aspiring graphic designer seeking to transition into remote work.
+            </p>
+        </section>
+
+        <section class="skills">
+            <h2>Skills Set</h2>
+            <ul id="skills-list" contenteditable="true">
+                <li>Team Management & Supervision</li>
+                <li>Graphic Design (Adobe Photoshop, Illustrator, Canva)</li>
+                <li>HTML, CSS, and JavaScript Basics</li>
+            </ul>
+        </section>
+
+        <button onclick="downloadPDF()">Download as PDF</button>
+        <button onclick="previewCV()">Preview CV</button>
+
+        <div id="cv-preview" style="display: none; margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        // Upload and display photo preview
+        document.getElementById('photo-upload').addEventListener('change', function (event) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                document.getElementById('photo-preview').src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        });
+
+        // Change text color
+        function changeTextColor() {
+            const color = document.getElementById('text-color').value;
+            document.execCommand('foreColor', false, color);
+        }
+
+        // PDF download functionality
+        function downloadPDF() {
+            const element = document.querySelector('.cv-container');
+            html2pdf().from(element).save('MyCV.pdf');
+        }
+
+        // CV Preview function
+        function previewCV() {
+            const cvContainer = document.querySelector('.cv-container').cloneNode(true);
+            const previewContainer = document.getElementById('cv-preview');
+            previewContainer.innerHTML = '';
+            previewContainer.appendChild(cvContainer);
+            previewContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
