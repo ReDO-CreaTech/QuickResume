@@ -17,11 +17,11 @@
     position: relative;
 }
 .header img {
-    width: 165px;
-    height: 165px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     position: absolute;
-    top: 50px;
+    top: 60px;
     left: 50px;
     border: 5px solid white;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
@@ -37,11 +37,11 @@
 }
 .header-text {
     color: white;
-    width: 63%;
+    width: 65%;
     margin-left: auto;
 }
 .header-text h1 {
-    font-size: 40px;
+    font-size: 60px;
     font-weight: normal;
 }
 .header-text p {
@@ -54,13 +54,13 @@
 }
 
  .left-area {
-    width: 35%;
+    width: 20%;
     background-color: rgb(236, 236, 236);
     text-align: center;
     padding-bottom: 20px;
  }
  .left-area .contact {
-    margin-top: 100px;
+    margin-top: 150px;
     padding: 0 30px;
  }
  .contact h4 {
